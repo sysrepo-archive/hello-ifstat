@@ -259,7 +259,7 @@ FILE* if_simulate_and_open(char* f, char* m)
 	fprintf(stderr, "Number of devices must be between 1 and %d devices/n", MAX_DEVICES);
 	return NULL;
       }
-    i = initialize_devs_from_dev("../dev", n, devs) ;
+    i = initialize_devs_from_dev("/proc/net/dev", n, devs) ;
     if (i != (n-1))
       {
 	bzero(devs, sizeof(devs));
@@ -272,7 +272,7 @@ FILE* if_simulate_and_open(char* f, char* m)
     sprintf(devbackup, xmlfilefmt, i); 
     rename("../dev.xml", devbackup);
 #endif
-    dev = fopen("../dev","w");
+    dev = fopen("/proc/net/dev","w");
     if (dev == NULL) 
       {
 	fprintf(stderr, "if_simulate_and_open cannot open simultated /proc/net/dev file\n");
@@ -281,6 +281,6 @@ FILE* if_simulate_and_open(char* f, char* m)
     simulate_devs(n);
     fprint_devs(dev, devfmt, n);
     fclose(dev);
-    dev=fopen("../dev","r");
+    dev=fopen("/proc/net/dev","r");
     return dev;
 }
