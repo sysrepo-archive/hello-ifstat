@@ -21,12 +21,5 @@
 # Generated files
 #
 
-/build/CMakeCache.txt
-/build/CMakeFiles
-/build/cmake_install.cmake
-/build/Makefile
-/CMakeCache.txt
-/CMakeFiles
-/cmake_install.cmake
-/Makefile
+/ifstat
 /bin
