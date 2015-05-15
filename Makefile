@@ -12,7 +12,7 @@ ifstat:
 	$(CC) $(CC_FLAGS) -I$(LIBXML2_INCLUDE_PATH) ifstatus.c -lroxml -lxml2 if.o -o ifstat
 
 clean:
-	rm *.o ifstat
+	rm -f *.o ifstat
 
 install: ifstat
 	install -d $(DESTDIR)/$(PREFIX)/bin/
