@@ -272,7 +272,7 @@ FILE* if_simulate_and_open(char* f, char* m)
     sprintf(devbackup, xmlfilefmt, i); 
     rename("../dev.xml", devbackup);
 #endif
-    dev = fopen("/proc/net/dev","w");
+    dev = fopen("/proc/net/dev","r");
     if (dev == NULL) 
       {
 	fprintf(stderr, "if_simulate_and_open cannot open simultated /proc/net/dev file\n");
